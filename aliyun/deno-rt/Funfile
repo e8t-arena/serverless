@@ -1,0 +1,10 @@
+RUNTIME custom
+
+RUN mkdir -p /code/.fun/deno/bin
+
+RUN cd /code/.fun/deno/bin \
+    && curl --fail --location --progress-bar --output deno.zip http://deno.devtips.cn/releases/download/v1.3.0/deno-x86_64-unknown-linux-gnu.zip \
+    && unzip -o deno.zip \
+    && chmod +x deno \
+    && rm deno.zip \
+    && echo "Deno was installed successfully."

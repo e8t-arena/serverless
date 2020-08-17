@@ -9,8 +9,10 @@ Resources:
       Type: 'Aliyun::Serverless::Function'
       Properties:
         Handler: index.handler
-        Runtime: nodejs12
+        Runtime: custom
         CodeUri: './'
+        EnvironmentVariables:
+          PATH: '/code/.fun/deno/bin'
       Events:
         httpTrigger:
           Type: HTTP
